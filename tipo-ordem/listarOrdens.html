@@ -1,0 +1,25 @@
+<template name="listarOrdens">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>Lista das Ordens de Serviço</h5>
+      {{>iboxTools}}
+    </div>
+    <div class="ibox-content">
+      <div class="row">
+        {{> adicionarOrdem}}
+      </div>
+      <ul class="todo-list m-t small-list">
+        {{#each listaDasOrdensAbertas}}
+        <li>
+          <div class="checkbox">
+            <input type="checkbox" id="{{ordemId}}" {{checked}}>
+            <label for="{{ordemId}}">
+              {{descricao}}
+            </label>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</template>

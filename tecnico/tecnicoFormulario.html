@@ -1,0 +1,45 @@
+<template name="tecnicoFormulario">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nome">Nome</label>
+                <div class="col-md-4">
+                    <input id="nomeTecnico" value="{{nome}}" name="nome" type="text" class="form-control input-md" required="">
+                </div>            
+                </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="cpf">CPF</label>
+                <div class="col-md-4">
+                    <input id="cpfTecnico" value="{{cpf}}" name="cpf" type="text" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="telefone">Telefone</label>
+                <div class="col-md-4">
+                    <input id="telefoneTecnico" value="{{telefone}}" name="telefone" type="text" class="form-control input-md">
+                </div>
+            </div>            
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email">E-mail</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input id="emailTecnico" value="{{email}}" name="email" class="form-control" type="text" required="">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="carga">Carga Horária</label>
+                <div class="col-md-4">
+                    <input id="cargaHorario" value="{{carga}}" name="carga" type="text" class="form-control input-md">
+                </div>
+            </div> 
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="funcao">Função</label>
+                <div class="col-md-4">
+                    <input id="funcaoTecnico" value="{{funcao}}" name="funcao" type="text" class="form-control input-md">
+                </div>
+            </div> 
+        </fieldset>
+    </form>
+</template>

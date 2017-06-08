@@ -1,0 +1,53 @@
+<template name="adicionarOrdem">
+  <button type="button" class="btn btn-default btn-circle" style="float: right" data-toggle="modal" data-target="#myModal2">
+        <i class="fa fa-plus"></i>
+  </button>
+  <div class="modal inmodal" id="myModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content animated flipInY">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title">Criar uma ordem de serviço</h4>
+          <small class="font-bold">Informe o problema, que será enviado ao governo na hora!</small>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="col-md-2 control-label" for="descricao">Descrição</label>
+            <div class="col-md-10">
+              <input value="{{descricao}}" name="descricao" type="text" class="form-control input-md" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <small class="font-bold">Dados da localização:</small>
+            <label class="col-md-2 control-label" for="endereco">Endereço</label>
+            <div class="col-md-10">
+              <input value="{{endereco}}" name="endereco" type="text" class="form-control input-md" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-2 control-label" for="bairro">Bairro</label>
+            <div class="col-md-10">
+              <input value="{{bairro}}" name="bairro" type="text" class="form-control input-md" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-2 control-label" for="cep">CEP</label>
+            <div class="col-md-10">
+              <input value="{{cep}}" name="cep" type="number" class="form-control input-md" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-2 control-label" for="tipo">Tipo de serviço</label>
+            <div class="col-md-10">
+              <input value="{{tipo}}" name="tipo" type="number" class="form-control input-md" required="">
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Adicionar</button>
+        </div>
+      </div>
+    </div>
+</template>
