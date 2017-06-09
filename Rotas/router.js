@@ -16,14 +16,6 @@ Router.route('/', {
 	},
 });
 
-Router.route('/login', {
-	before: function() {
-		if (!Meteor.loggingIn() && !Meteor.user()) {
-			this.render('login');
-		}
-		else this.redirect("/")
-	},
-});
 
 Router.route('/home', {
 	before: function() {
