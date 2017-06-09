@@ -7,3 +7,10 @@ As funcionalidades que estarão disponibilizados são: Cliente e Técnico.
 Cliente: Abertura de Ordens de Serviço, Visualização das ordens em aberto e os status de solução criadas pelo Técnico;
 
 Técnico: Terá na tela inicial as ordens de serviço abertas, juntamente com o nome de quem abriu, data e hora. Poderá alterar o status da ordem(em solução, ordem transferida para departamento tal), e encerrar informando a solução tomada, hora e data.
+
+# Meteor
+Essa aplicação foi desenvolvida usando o Meteor, um framework web JavaScript open-source escrito em Node.js
+Baixe o instalador pelo site  https://www.meteor.com/install;
+Após a instalação, faça a clonagem deste projeto e inicie com:
+* cd city
+* meteor
