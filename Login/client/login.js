@@ -3,8 +3,8 @@ Template.login.events({
         debugger;
         event.preventDefault();
         var email = $('[email]').val();
-        var password = $('[cpf]').val();
-        Meteor.loginWithPassword(email, password);
+        var senha = $('[senha]').val();
+        Meteor.loginWithPassword(email, senha);
         if(Meteor.userId())
             Router.go('/');
     }

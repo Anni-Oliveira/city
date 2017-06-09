@@ -1,4 +1,4 @@
-Template.navigation.rendered = function () {
+Template.navegacaoMenu.rendered = function () {
 
 	// Initialize metisMenu
 	$('#side-menu').metisMenu();
@@ -6,7 +6,7 @@ Template.navigation.rendered = function () {
 };
 
 // Used only on OffCanvas layout
-Template.navigation.events({
+Template.navegacaoMenu.events({
 	'click .itemMenu': function () {
 		Router.go(this.rota);
 	},
@@ -16,8 +16,8 @@ Template.navigation.events({
 
 });
 
-Template.navigation.helpers({
-	menuNavigation() {
+Template.navegacaoMenu.helpers({
+	menuNavegacao() {
 		return _menu;
 	}
 })

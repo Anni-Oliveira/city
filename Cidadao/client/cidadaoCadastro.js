@@ -7,13 +7,15 @@ Template.cidadaoCadastro.events({
 		var cpf = document.getElementById('cpfCidadao').value;
 		var telefone = document.getElementById('telefoneCidadao').value;
 		var email = document.getElementById('emailCidadao').value;
-		
+		var senha = document.getElementById('senhaCidadao').value;
+
 		var cidadao = {
 			nome,
 			cpf,
 			telefone,
 			email,
-			image: "img/user.png"
+			image: "img/user.png",
+			senha
 		};
 		Meteor.call('cidadao.adicionar', cidadao);
 		Router.go('/cidadao');

@@ -22,7 +22,7 @@ Router.route('/home', {
 		if (!Meteor.loggingIn() && !Meteor.user()) {
 			this.redirect("login");
 		}
-		else this.render('homeCidadao');
+		else this.render('home');
 	},
 });
 
@@ -47,7 +47,7 @@ Router.route('/cidadao/add', {
 Router.route('/cidadao/:_cidadaoId', {
 	before: function () {
 		if (!Meteor.loggingIn() && !Meteor.user()) {
-			this.redirect('login');
+			this.redirect("login");
 		}
 		else this.render('cidadaoEd');
 	},

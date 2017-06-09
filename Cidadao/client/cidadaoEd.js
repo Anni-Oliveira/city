@@ -1,4 +1,4 @@
-Template.cidadaoEdit.events({
+Template.cidadaoEd.events({
 	'click .cancelar': function (event) {
 		Router.go('/cidadao');
 	},
@@ -10,15 +10,14 @@ Template.cidadaoEdit.events({
 	'click .salvar': function (event) {
 		var self = this;
 		var nome = document.getElementById('nomeCidadao').value;
-		var matricula = document.getElementById('cpfCidadao').value;
 		var telefone = document.getElementById('telefoneCidadao').value;
 		var email = document.getElementById('emailCidadao').value;
 		
 		var cidadao = {
 			nome,
-			matricula,
 			telefone,
 			email,
+			senha
 		}
 		Meteor.call('cidadao.alterar', self._id, cidadao);
 		Router.go('/cidadao');
