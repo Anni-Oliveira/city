@@ -1,10 +1,27 @@
-Router.configure({ layoutTemplate: 'home' }); 
+Router.configure({
+	layoutTemplate: 'mainLayout',
+});
+
+Router.route('/login', function () {
+	this.layout("blankLayout");
+	this.render('login');
+});
+
 Router.route('/', {
 	before: function () {
 		if (!Meteor.loggingIn() && !Meteor.user()) {
 			this.redirect("login");
 		}
 		else this.render('home');
+	},
+});
+
+Router.route('/login', {
+	before: function() {
+		if (!Meteor.loggingIn() && !Meteor.user()) {
+			this.render('login');
+		}
+		else this.redirect("/")
 	},
 });
 
