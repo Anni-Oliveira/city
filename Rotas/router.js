@@ -1,3 +1,4 @@
+Router.configure({ layoutTemplate: 'home' }); 
 Router.route('/', {
 	before: function () {
 		if (!Meteor.loggingIn() && !Meteor.user()) {
@@ -7,7 +8,7 @@ Router.route('/', {
 	},
 });
 
-Router.route('/homeC', {
+Router.route('/home', {
 	before: function() {
 		if (!Meteor.loggingIn() && !Meteor.user()) {
 			this.redirect("login");

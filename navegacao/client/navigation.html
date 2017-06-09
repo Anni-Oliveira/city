@@ -1,0 +1,22 @@
+<template name="navigation">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <a class="close-canvas-menu"><i class="fa fa-times"></i></a>
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header logo-element">
+                    <div class="dropdown profile-element" style="font-size: 30px !important">
+                        VoxCity
+                    </div>
+                    <div class="logo-element">
+                        VoxCity  
+                    </div>
+                </li>
+                {{#each menuNavigation}}
+                <li class="{{isActivePath regex='{{template}}'}}">
+                    <a class="itemMenu"><i class="{{icone}}"></i> <span class="nav-label" data-i18n="nav.dashboard">{{nome}}</span></a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </nav>
+</template>
