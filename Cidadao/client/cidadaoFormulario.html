@@ -6,17 +6,23 @@
                 <div class="col-md-4">
                     <input id="nomeCidadao" value="{{nome}}" name="nome" type="text" class="form-control input-md" required="">
                 </div>            
-                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="sobrenome">Sobrenome</label>
+                <div class="col-md-4">
+                    <input id="sobreNomeCidadao" value="{{sobrenome}}" name="sobrenome" type="text" class="form-control input-md" required="">
+                </div>            
+            </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="cpf">CPF</label>
                 <div class="col-md-4">
-                    <input id="cpfCidadao" value="{{cpf}}" name="cpf" type="text" class="form-control input-md" required="">
+                    <input id="cpfCidadao" value="{{cpf}}" name="cpf" type="text" maxlength="14" placeholder="xxx.xxx.xxx-xx" class="form-control input-md" required="">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-4 control-label" for="telefone">Telefone</label>
                 <div class="col-md-4">
-                    <input id="telefoneCidadao" value="{{telefone}}" name="telefone" type="text" class="form-control input-md">
+                    <input id="telefoneCidadao" value="{{telefone}}" name="telefone" type="text" maxlength="14" placeholder="(xx)x-xxx.xxx" class="form-control input-md">
                 </div>
             </div>            
             <div class="form-group">
@@ -24,16 +30,15 @@
                 <div class="col-md-4">
                     <div class="input-group">
                         <span class="input-group-addon">@</span>
-                        <input id="emailCidadao" value="{{email}}" name="email" class="form-control" type="text" required="">
+                        <input id="emailCidadao" value="{{email}}" name="email" class="form-control" type="email" required="">
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-md-4 control-label" for="senha">Senha</label>
+                <label class="col-md-4 control-label" for="password">Senha</label>
                 <div class="col-md-4">
                     <div class="input-group">
-                        <span class="input-group-addon">@</span>
-                        <input id="senhaCidadao" value="{{senha}}" name="senha" class="form-control" type="number" required="">
+                        <input id="senhaCidadao" value="{{password}}" name="password" class="form-control" type="password" maxlength="6" required="">
                     </div>
                 </div>
             </div>

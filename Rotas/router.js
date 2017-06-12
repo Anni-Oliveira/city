@@ -1,3 +1,7 @@
+ /*Meteor.subscribe('settings', function() { 
+	 selectedLanguage = settings.findOne().language; 
+ }); */
+
 Router.configure({
 	layoutTemplate: 'mainLayout',
 });
@@ -15,7 +19,6 @@ Router.route('/', {
 		else this.render('home');
 	},
 });
-
 
 Router.route('/home', {
 	before: function() {
@@ -37,10 +40,7 @@ Router.route('/cidadao', {
 
 Router.route('/cidadao/add', {
 	before: function() {
-		if (!Meteor.loggingIn() && !Meteor.user("tecnico")) {
-			this.redirect("login");
-		}
-		else this.render('cidadaoCadastro');
+		this.render('cidadaoCadastro');
 	},
 });
 

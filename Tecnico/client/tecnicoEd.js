@@ -10,6 +10,7 @@ Template.tecnicoEdit.events({
 	'click .salvar': function (event) {
 		var self = this;
 		var nome = document.getElementById('nomeTecnico').value;
+		var senha = document.getElementById('senhaTecnico').value;
 		var cpf = document.getElementById('cpfTecnico').value;
 		var telefone = document.getElementById('telefoneTecnico').value;
 		var email = document.getElementById('emailTecnico').value;

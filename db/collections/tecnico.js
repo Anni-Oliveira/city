@@ -9,7 +9,8 @@ var tecnicoArray = [
 		cpf: '098-657-345-21',
 		telefone: '(62) 9-9634-5485',
 		carga: '40 horas semanais',
-		funcao: 'triagem e suporte'
+		funcao: 'triagem e suporte',
+		senha: '111111'
 
 	},
 	

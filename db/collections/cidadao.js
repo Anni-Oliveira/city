@@ -7,7 +7,8 @@ var cidadaoArray = [
 		nome: 'Gleiverton Ramalho',
 		email: 'gleiverton@gmail.com',
 		cpf: '343.456.234.10',
-		telefone: '(62) 9-9786-4556'
+		telefone: '(62) 9-9786-4556',
+		senha: '000000'
 	},
 	{
 		_id: 'cidadaoJhonataId',
@@ -15,7 +16,8 @@ var cidadaoArray = [
 		nome: 'Jhônata Leandro',
 		email: 'jhonataL@gmail.com',
 		cpf: '234.231.567-25',
-		telefone: '(62) 9-9762-9231'
+		telefone: '(62) 9-9762-9231',
+		senha: '000000'
 	},
 	{
 		_id: 'cidadaoAlexAlvesId',
@@ -23,7 +25,8 @@ var cidadaoArray = [
 		nome: 'Alex Alves Maia',
 		email: 'alexAM@gmail.com',
 		cpf: '231.768.900-23',
-		telefone: '(62) 9-8764-2334'
+		telefone: '(62) 9-8764-2334',
+		senha: '000000'
 	},
 	
 ];

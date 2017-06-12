@@ -3,9 +3,9 @@ Template.login.events({
         debugger;
         event.preventDefault();
         var email = $('[email]').val();
-        var senha = $('[senha]').val();
-        Meteor.loginWithPassword(email, senha);
+        var password = $('[password]').val();
+        Meteor.loginWithPassword(email, password);
         if(Meteor.userId())
-            Router.go('/');
+            Router.go('/home');
     }
-})
+});
