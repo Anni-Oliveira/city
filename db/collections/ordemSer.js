@@ -1,5 +1,5 @@
-Jogo = new Meteor.Collection('jogo');
-var jogosArray = [
+OrdemSer = new Meteor.Collection('ordemSer');
+var ordensArray = [
     {
         _id: "jogoFutebolDeSalaoId",
         modalidadeId: "futebolDeSalaoId",
@@ -10,10 +10,10 @@ var jogosArray = [
     }
 ]
 
-if (Jogo.find().count() === 0) {
-	jogosArray.forEach(function (jogo) {
-		Jogo.insert(
-			jogo
+if (OrdemSer.find().count() === 0) {
+	ordensArray.forEach(function (ordemSer) {
+		OrdemSer.insert(
+			ordemSer
 		);
 	});
 } 

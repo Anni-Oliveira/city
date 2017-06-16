@@ -1,14 +1,15 @@
 Meteor.methods({
-    'cidadao.adicionar': function (cidadao) {
+    'cidadao .adicionar': function (cidadao) {
         return Cidadao.insert({
             nome: cidadao.nome,
             cpf: cidadao.cpf,
             telefone: cidadao.telefone,
             email: cidadao.email,
             image: cidadao.image,
+            password: cidadao.password,
         });
     },
-    'cidadao.alterar': function (cidadaoId, cidadao) {
+    'cidadao .alterar': function (cidadaoId, cidadao) {
         return Cidadao.update({ _id: cidadaoId }, {
             $set: {
                 nome: cidadao.nome,
@@ -31,7 +32,8 @@ Meteor.methods({
             email: tecnico.email,
             image: tecnico.image,
             carga: tecnico.carga,
-            funcao: tecnico.funcao
+            funcao: tecnico.funcao,
+            password: tecnico.password,
         });
     },
     'tecnico.alterar': function (tecnicoId, tecnico) {
