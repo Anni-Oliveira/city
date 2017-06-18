@@ -3,7 +3,6 @@ Template.cidadaoCadastro.events({
 		Router.go('/add');
 	},
 	'click .salvar': function (event) {
-		var _cidadaoId = document.getElementsByName('cidadao'+nome+'id').value;
 		var nome = document.getElementById('nomeCidadao').value;
 		var sobrenome = document.getElementById('sobreNomeCidadao').value;
 		var cpf = document.getElementById('cpfCidadao').value;
@@ -12,16 +11,15 @@ Template.cidadaoCadastro.events({
 		var password = document.getElementById('senhaCidadao').value;
 
 		var cidadao = {
-			_cidadaoId,
 			nome,
 			sobrenome,
 			cpf,
 			telefone,
 			email,
-			password,
-			image: "img/user.png"
+			imagem: "img/user.png",
+			password
 		};
 		Meteor.call('cidadao.adicionar', cidadao);
-		Router.go('/cidadao');
+		Router.go('/home');
 	}
 });

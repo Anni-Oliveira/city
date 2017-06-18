@@ -11,32 +11,32 @@ Template.postsList.onRendered(function () {
       var oldTop = $node.offset().top;
       var height = $(node).outerHeight(true);
       
-      // find all the elements between next and node
+      // Encontre todos os elementos entre o próximo e o nó
       var $inBetween = $(next).nextUntil(node);
       if ($inBetween.length === 0)
         $inBetween = $(node).nextUntil(next);
       
-      // now put node in place
+      // Agora colocou o nó no lugar
       $(node).insertBefore(next);
       
-      // measure new top
+      // Medir novo topo
       var newTop = $(node).offset().top;
       
-      // move node *back* to where it was before
+      // Mover nó * de volta * para onde estava antes
       $(node)
         .removeClass('animate')
         .css('top', oldTop - newTop);
       
-      // push every other element down (or up) to put them back
+      // Pressione todos os outros elementos para baixo (ou para cima) para colocá-los de volta
       $inBetween
         .removeClass('animate')
         .css('top', oldTop < newTop ? height : -1 * height)
         
       
-      // force a redraw
+      // Forçar um redesenho
       $(node).offset();
       
-      // reset everything to 0, animated
+      // Redefinir tudo para 0, animado
       $(node).addClass('animate').css('top', 0);
       $inBetween.addClass('animate').css('top', 0);
     },

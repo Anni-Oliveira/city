@@ -5,7 +5,7 @@ Meteor.methods({
             cpf: cidadao.cpf,
             telefone: cidadao.telefone,
             email: cidadao.email,
-            image: cidadao.image,
+            imagem: cidadao.image,
             password: cidadao.password,
         });
     },
@@ -30,8 +30,8 @@ Meteor.methods({
             cpf: tecnico.cpf,
             telefone: tecnico.telefone,
             email: tecnico.email,
-            image: tecnico.image,
-            carga: tecnico.carga,
+            imagem: tecnico.imagem,
+            cargo: tecnico.cargo,
             funcao: tecnico.funcao,
             password: tecnico.password,
         });
@@ -43,7 +43,7 @@ Meteor.methods({
                 cpf: tecnico.cpf,
                 telefone: tecnico.telefone,
                 email: tecnico.email,
-                carga: tecnico.carga,
+                cargo: tecnico.cargo,
                 funcao: tecnico.funcao
             }
         });

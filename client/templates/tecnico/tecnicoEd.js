@@ -10,22 +10,23 @@ Template.tecnicoEdit.events({
 	'click .salvar': function (event) {
 		var self = this;
 		var nome = document.getElementById('nomeTecnico').value;
-		var senha = document.getElementById('senhaTecnico').value;
+		var password = document.getElementById('senhaTecnico').value;
 		var cpf = document.getElementById('cpfTecnico').value;
 		var telefone = document.getElementById('telefoneTecnico').value;
 		var email = document.getElementById('emailTecnico').value;
-		var cargaHorario = document.getElementById('cargaTecnico').value;
+		var carga = document.getElementById('cargaTecnico').value;
 		var funcao = document.getElementById('funcaoTecnico').value;
 		
 		var tecnicno = {
 			nome,
+			password,
 			cpf,
 			telefone,
 			email,
-			cargaHorario,
+			carga,
 			funcao
 		}
 		Meteor.call('tecnico.alterar', self._id, tecnico);
-		Router.go('/tecnico');
+		Router.go('/homeTecnico');
   }
 });

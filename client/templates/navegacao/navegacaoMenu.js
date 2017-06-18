@@ -26,19 +26,19 @@ _menu = [
 	{
 		template: 'home',
 		rota: '/',
-		nome: 'Home',
+		nome: 'home',
 		icone: 'fa fa-home',
 	},
 	{
 		template: 'adicionarOrdem',
 		rota: '/cidadao',
-		nome: 'Cidadao',
+		nome: 'cidadao',
 		icone: 'fa fa-users'
 	},
 	{
 		template: 'listarOrdens',
 		rota: '/tecnicoWork',
-		nome: 'Tecnico',
+		nome: 'tecnico',
 		icone: 'fa fa-user'
 	},
 	{

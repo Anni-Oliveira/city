@@ -4,11 +4,11 @@ Template.atletaAdd.events({
 	},
 	'click .salvar': function (event) {
 		var nome = document.getElementById('nomeTecnico').value;
-		var senha = document.getElementById('senhaTecnico').value;
+		var password = document.getElementById('senhaTecnico').value;
 		var cpf = document.getElementById('cpfTecnico').value;
 		var telefone = document.getElementById('telefoneTecnico').value;
 		var email = document.getElementById('emailTecnico').value;
-		var cargaHorario = document.getElementById('cargaTecnico').value;
+		var carga = document.getElementById('cargaTecnico').value;
 		var funcao = document.getElementById('funcaoTecnico').value;
 		
 		var tecnico = {
@@ -16,10 +16,10 @@ Template.atletaAdd.events({
 			cpf,
 			telefone,
 			email,
-			cargaHorario,
+			carga,
 			funcao,
-			image: "img/user.png",
-			senha
+			imagem: "img/user.png",
+			password
 		};
 		Meteor.call('tecnico.adicionar', tecnico);
 		Router.go('/tecnico');

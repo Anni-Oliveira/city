@@ -1,0 +1,9 @@
+<template name="postItem">
+  <div class="post">
+    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
+    <div class="post-content">
+      <h3><a href="{{localizacao}}">{{descricao}}</a><span>{{domain}}</span></h3>
+    </div>
+    <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss</a>
+  </div>
+</template>
