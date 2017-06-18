@@ -5,7 +5,7 @@ Meteor.methods({
             cpf: cidadao.cpf,
             telefone: cidadao.telefone,
             email: cidadao.email,
-            imagem: cidadao.image,
+            imagem: cidadao.imagem,
             password: cidadao.password,
         });
     },

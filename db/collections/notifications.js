@@ -14,7 +14,7 @@ createCommentNotification = function(comment) {
       userId: post.userId,
       postId: post._id,
       commentId: comment._id,
-      commenterName: comment.author,
+      commenterName: comment.tecnico,
       read: false
     });
   }

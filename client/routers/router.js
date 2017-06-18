@@ -7,18 +7,18 @@ Router.route('/login', function () {
 	this.render('login');
 });
 
-/*Router.route('/', function () {
+Router.route('/', function () {
   this.render('home');
-});*/
+});
 
-Router.route('/', {
+/*Router.route('/', {
 	before: function() {
 		if (!Meteor.loggingIn() && !Meteor.user()) {
 			this.redirect("login");
 		}
 		else this.render('home');
   }
-});
+});*/
 
 Router.route('/cidadao', {
 	before: function() {
@@ -75,3 +75,82 @@ Router.route('/tecnico/:_tecnicoId', {
 		return Tecnico.find({ _id: tecnicoId }).fetch()[0];
 	}
 });
+
+PostsListController = RouteController.extend({
+  template: 'postsList',
+  postsLimit: function() { 
+    return parseInt(this.params.postsLimit) || this.increment; 
+  },
+  findOptions: function() {
+    return {sort: this.sort, limit: this.postsLimit()};
+  },
+  subscriptions: function() {
+    this.postsSub = Meteor.subscribe('posts', this.findOptions());
+  },
+  posts: function() {
+    return Posts.find({}, this.findOptions());
+  },
+  data: function() {
+    var self = this;
+    return {
+      posts: self.posts(),
+      ready: self.postsSub.ready,
+      nextPath: function() {
+        if (self.posts().count() === self.postsLimit())
+          return self.nextPath();
+      }
+    };
+  }
+});
+
+NewPostsController = PostsListController.extend({
+  nextPath: function() {
+    return Router.routes.newPosts.path({postsLimit: this.postsLimit() + this.increment})
+  }
+});
+
+BestPostsController = PostsListController.extend({
+  nextPath: function() {
+    return Router.routes.bestPosts.path({postsLimit: this.postsLimit() + this.increment})
+  }
+});
+Router.route('/new/:postsLimit?', {name: 'newPosts'});
+
+Router.route('/best/:postsLimit?', {name: 'bestPosts'});
+
+
+Router.route('/posts/:_id', {
+  name: 'postPage',
+  waitOn: function() {
+    return [
+      Meteor.subscribe('singlePost', this.params._id),
+      Meteor.subscribe('comments', this.params._id)
+    ];
+  },
+  data: function() { return Posts.findOne(this.params._id); }
+});
+
+Router.route('/posts/:_id/edit', {
+  name: 'postEdit',
+  waitOn: function() { 
+    return Meteor.subscribe('singlePost', this.params._id);
+  },
+  data: function() { return Posts.findOne(this.params._id); }
+});
+
+Router.route('/submit', {name: 'postSubmit'});
+
+var requireLogin = function() {
+  if (! Meteor.user()) {
+    if (Meteor.loggingIn()) {
+      this.render(this.loadingTemplate);
+    } else {
+      this.render('accessDenied');
+    }
+  } else {
+    this.next();
+  }
+}
+
+Router.onBeforeAction('dataNotFound', {only: 'postPage'});
+Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
