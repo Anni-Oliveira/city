@@ -2,24 +2,26 @@ Template.postEdit.onCreated(function() {
   Session.set('postEditErrors', {});
 });
 
-Template.postEdit.helpers({
+/*Template.postEdit.helpers({
   errorMessage: function(field) {
     return Session.get('postEditErrors')[field];
   },
   errorClass: function (field) {
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
   }
-});
+});*/
 
 Template.postEdit.events({
-  'submit form': function(e) {
+  'click .submit form': function(e) {
     e.preventDefault();
     
     var currentPostId = this._id;
     
     var postProperties = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
+      descricao: $(e.target).find('[name=descricao]').val(),
+      rua: $(e.target).find('[name=rua]').val(),
+      bairro: $(e.target).find('[name=bairro]').val(),
+      cep: $(e.target).find('[name=cep]').val()
     }
     
     var errors = validatePost(postProperties);
@@ -31,7 +33,7 @@ Template.postEdit.events({
         // display the error to the user
         throwError(error.reason);
       } else {
-        Router.go('postPage', {_id: currentPostId});
+        Router.go('postList', {_id: currentPostId});
       }
     });
   },

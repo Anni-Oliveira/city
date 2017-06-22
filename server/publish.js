@@ -3,3 +3,7 @@ Meteor.publish('allUsers', function (){
     return Meteor.users.find({});
     }
 });
+
+Meteor.publish('allPosts', function(){
+  return Posts.find();
+});

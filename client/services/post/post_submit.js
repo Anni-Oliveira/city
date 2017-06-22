@@ -1,3 +1,5 @@
+Posts = new Meteor.Collection('posts');
+
 Template.postSubmit.onCreated(function() {
   Session.set('postSubmitErrors', {});
 });
@@ -15,18 +17,18 @@ Template.postSubmit.events({
   'click .submit form': function(e) {
     e.preventDefault();
     
-    var post = {
+    var posts = {
       descricao: $(e.target).find('[name=descricao]').val(),
       rua: $(e.target).find('[name=rua]').val(),
       bairro: $(e.target).find('[name=bairro]').val(),
       cep: $(e.target).find('[name=cep]').val()
     };
     
-    var errors = validatePost(post);
-    if (errors.title || errors.url)
+    var errors = validatePost(posts);
+    if (errors.descricao || errors.rua)
       return Session.set('postSubmitErrors', errors);
     
-    Meteor.call('postInsert', post, function(error, result) {
+    Meteor.call('postInsert', posts, function(error, result) {
       // display the error to the user and abort
       if (error)
         return throwError(error.reason);
@@ -35,7 +37,7 @@ Template.postSubmit.events({
       if (result.postExists)
         throwError('This link has already been posted');
       
-      Router.go('postPage', {_id: result._id});  
+      Router.go('postList', {_id: result._id});  
     });
   }
 });

@@ -1,4 +1,4 @@
-<template name="postEdit">
+<template name="postList">
     {{#if isInRole 'admin'}}
     
     <table class="{{editMode}}">
@@ -12,24 +12,23 @@
             <th>Created At</th>
             
         </tr>
-    {{#each users}}
+    {{#each post}}
         <tr>
-            <td class="post_id">{{_id}}</td>
             <td class="user_id">{{profile.firstName}}</td>
-            <td>{{profile.descricao}}</td>
-            <td>{{profile.rua}}</td>
-            <td>{{profile.bairro}}</td>
-            <td>{{profile.cep}}</td>
+            <td>{{descricao}}</td>
+            <td>{{rua}}</td>
+            <td>{{bairro}}</td>
+            <td>{{cep}}</td>
             <td>{{createdAt}}</td>
             <td>{{is open}}
                 {{#if currentEdit}}
-                    <div class="user-edit">
+                    <div class="post-edit">
                         <i class="fa fa-close close-edit-mode"></i>
                         <h3>Editar Ordem</h3>
-                        {{#if isAdmin}}
-                        <button class="toggle-admin">Solucionar Ordem</button>
+                        {{#if isOpen}}
+                        <button class="toggle-open">Solucionar Ordem</button>
                             {{else}}
-                        <button class="toggle-admin">Adicionar Solução</button>
+                        <button class="toggle-open">Adicionar Solução</button>
                         {{/if}}
                     </div>
                 {{/if}}
