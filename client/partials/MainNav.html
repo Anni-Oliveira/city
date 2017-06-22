@@ -1,0 +1,16 @@
+<template name="MainNav">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            {{#if isInRole 'admin'}}
+            <li><a href="/dashboard">Dashboard</a></li>
+            {{/if}}
+            {{#if currentUser}}
+                <li><a href="/services">Solicitar serviço</a></li>
+                <li class="logout">Logout</li>
+            {{else}}
+                <li class="login-toggle">Login/Sign-up</li>
+            {{/if}}
+        </ul>
+    </nav>
+</template>

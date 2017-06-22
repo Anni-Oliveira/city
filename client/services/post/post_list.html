@@ -1,0 +1,44 @@
+<template name="postEdit">
+    {{#if isInRole 'admin'}}
+    
+    <table class="{{editMode}}">
+        <tr>
+            <th>Id</th>
+            <th>Solicitante</th>
+            <th>Descrição</th>
+            <th>Rua/Avenida</th>
+            <th>Bairro</th>
+            <th>CEP</th>
+            <th>Created At</th>
+            
+        </tr>
+    {{#each users}}
+        <tr>
+            <td class="post_id">{{_id}}</td>
+            <td class="user_id">{{profile.firstName}}</td>
+            <td>{{profile.descricao}}</td>
+            <td>{{profile.rua}}</td>
+            <td>{{profile.bairro}}</td>
+            <td>{{profile.cep}}</td>
+            <td>{{createdAt}}</td>
+            <td>{{is open}}
+                {{#if currentEdit}}
+                    <div class="user-edit">
+                        <i class="fa fa-close close-edit-mode"></i>
+                        <h3>Editar Ordem</h3>
+                        {{#if isAdmin}}
+                        <button class="toggle-admin">Solucionar Ordem</button>
+                            {{else}}
+                        <button class="toggle-admin">Adicionar Solução</button>
+                        {{/if}}
+                    </div>
+                {{/if}}
+            </td>
+        </tr>
+    {{/each}}
+    </table>
+
+    {{else}}
+        <h2> Não tem autorização para entrar nesta sessão</h2>
+    {{/if}}
+</template>

@@ -1,0 +1,41 @@
+<template name="Users">
+    {{#if isInRole 'admin'}}
+        <h1 class="page-title">Usuários</h1>
+    
+    <table class="{{editMode}}">
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>CPF</th>
+            <th>Created At</th>
+            <th>Admin</th>
+        </tr>
+    {{#each users}}
+        <tr>
+            <td class="user_id">{{_id}}</td>
+            <td>{{userEmail}}{{profile.userEmail}}</td>
+            <td>{{profile.firstName}}</td>
+            <td>{{profile.cpf}}</td>
+            <td>{{createdAt}}</td>
+            <td>{{isAdmin}}
+                {{#if currentEdit}}
+                    <div class="user-edit">
+                        <i class="fa fa-close close-edit-mode"></i>
+                        <h3>Editar Usuário</h3>
+                        {{#if isAdmin}}
+                        <button class="toggle-admin">Remover Admin</button>
+                            {{else}}
+                        <button class="toggle-admin">Adicionar Admin</button>
+                        {{/if}}
+                    </div>
+                {{/if}}
+            </td>
+        </tr>
+    {{/each}}
+    </table>
+
+    {{else}}
+        <h2> Não tem autorização para entrar nesta sessão</h2>
+    {{/if}}
+</template>

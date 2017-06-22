@@ -1,0 +1,34 @@
+<template name="postSubmit">
+  <form class="main form page">
+    <div class="form-group {{errorClass 'descricao'}}">
+      <label class="control-label" for="descricao">Descrição do problema</label>
+      <div class="controls">
+          <input name="descricao" id="descricao" type="text" value="" placeholder="Ex: Poste caído" class="form-control"/>
+          <span class="help-block">{{errorMessage 'descricao'}}</span>
+      </div>
+    </div>
+    <h4>Endereço do local</h4>
+    <div class="form-group {{errorClass 'rua'}}">
+      <label class="control-label" for="rua">Rua/Avenida</label>
+      <div class="controls">
+          <input name="rua" id="rua" type="text" value="" placeholder="Ex: Rua C 10" class="form-control"/>
+          <span class="help-block">{{errorMessage 'rua'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'bairro'}}">
+      <label class="control-label" for="url">Bairro</label>
+      <div class="controls">
+          <input name="bairro" id="bairro" type="text" value="" placeholder="Ex: Jardim Esperança" class="form-control"/>
+          <span class="help-block">{{errorMessage 'bairro'}}</span>
+      </div>
+    </div>
+    <div class="form-group {{errorClass 'cep'}}">
+      <label class="control-label" for="cep">CEP</label>
+      <div class="controls">
+          <input name="cep" id="cep" type="text" value="" placeholder="Ex: 74000-100" class="form-control"/>
+          <span class="help-block">{{errorMessage 'cep'}}</span>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+  </form>
+</template>
