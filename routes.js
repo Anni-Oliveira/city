@@ -20,8 +20,8 @@ FlowRouter.route('/services', {
     }
 });
 
-FlowRouter.route('/list-services', {
-    name: 'list-services',
+FlowRouter.route('/listServices', {
+    name: 'listServices',
     action() {
         BlazeLayout.render("AppLayout", {main: "ListServices"});
     }
