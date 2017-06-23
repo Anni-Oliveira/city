@@ -12,32 +12,18 @@
             <th>Created At</th>
             
         </tr>
-    {{#each post}}
+    {{#each posts}}
         <tr>
-            <td class="user_id">{{profile.firstName}}</td>
+            <td>{{postId}}</td>
+            <td class="user_id">{{author}}</td>
             <td>{{descricao}}</td>
             <td>{{rua}}</td>
             <td>{{bairro}}</td>
             <td>{{cep}}</td>
             <td>{{createdAt}}</td>
-            <td>{{is open}}
-                {{#if currentEdit}}
-                    <div class="post-edit">
-                        <i class="fa fa-close close-edit-mode"></i>
-                        <h3>Editar Ordem</h3>
-                        {{#if isOpen}}
-                        <button class="toggle-open">Solucionar Ordem</button>
-                            {{else}}
-                        <button class="toggle-open">Adicionar Solução</button>
-                        {{/if}}
-                    </div>
-                {{/if}}
-            </td>
         </tr>
     {{/each}}
     </table>
 
-    {{else}}
-        <h2> Não tem autorização para entrar nesta sessão</h2>
     {{/if}}
 </template>

@@ -2,14 +2,14 @@ Template.postEdit.onCreated(function() {
   Session.set('postEditErrors', {});
 });
 
-/*Template.postEdit.helpers({
+Template.postEdit.helpers({
   errorMessage: function(field) {
     return Session.get('postEditErrors')[field];
   },
   errorClass: function (field) {
     return !!Session.get('postEditErrors')[field] ? 'has-error' : '';
   }
-});*/
+});
 
 Template.postEdit.events({
   'click .submit form': function(e) {
@@ -25,7 +25,7 @@ Template.postEdit.events({
     }
     
     var errors = validatePost(postProperties);
-    if (errors.title || errors.url)
+    if (errors.descricao || errors.rua || errors.bairro || errors.cep)
       return Session.set('postEditErrors', errors);
     
     Posts.update(currentPostId, {$set: postProperties}, function(error) {
@@ -41,10 +41,10 @@ Template.postEdit.events({
   'click .delete': function(e) {
     e.preventDefault();
     
-    if (confirm("Delete this post?")) {
+    if (confirm("Encerrar esta solicitação?")) {
       var currentPostId = this._id;
       Posts.remove(currentPostId);
-      Router.go('home');
+      Router.go('/');
     }
   }
 });
