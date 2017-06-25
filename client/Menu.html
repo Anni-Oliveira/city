@@ -1,9 +1,9 @@
 <template name="Menu">
-	<h1 class="page-title">My Current Menu</h1>
+	<h1 class="page-title">Minha lista de solicitações</h1>
 	{{#each solicitacoes}}
 		{{> MenuItem}}
 	{{else}}
-		<h2>Please add <a href="/solicitacoes">solicitations</a> to your menu.</h2>
+		<h2>Adicione uma <a href="/services">solicitação</a> na sua lista.</h2>
 	{{/each}}
 </template>
 

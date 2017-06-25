@@ -13,6 +13,39 @@ FlowRouter.route('/dashboard', {
     }
 });
 
+FlowRouter.route('/services', {
+	name: 'services',
+	action() {
+		if(Meteor.userId()){
+			FlowRouter.go('service');
+		}
+		GAnalytics.pageview();
+		BlazeLayout.render('AppLayout', {main: 'Services'});
+	}
+});
+
+FlowRouter.route('/menu', {
+	name: 'menu',
+	action() {
+		BlazeLayout.render('AppLayout', {main: 'Menu'});
+	}
+});
+
+FlowRouter.route('/solicitacao/:id', {
+	name: 'solicitation',
+	action() {
+		GAnalytics.pageview();
+		BlazeLayout.render('AppLayout', {main: 'SolicitationSingle'});
+	}
+});
+
+FlowRouter.route('/menu', {
+	name: 'menu',
+	action() {
+		BlazeLayout.render('MainLayout', {main: 'Menu'});
+	}
+});
+
 var adminRoutes = FlowRouter.group({
     prefix: '/admin',
     name: 'admin'

@@ -293,67 +293,83 @@ table {
     opacity: 1;
 }
 
-.post {
-  /* For modern browsers */
-  /* For IE 6/7 (trigger hasLayout) */
-  *zoom: 1;
-  position: relative;
-  opacity: 1; }
-  .post:before, .post:after {
-    content: "";
-    display: table; }
-  .post:after {
-    clear: both; }
-  .post.invisible {
-    opacity: 0; }
-  .post.instant {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -o-transition: none;
-    transition: none; }
-  .post.animate{
-    -webkit-transition: all 300ms 0ms;
-    -moz-transition: all 300ms 0ms ease-in;
-    -o-transition: all 300ms 0ms ease-in;
-    transition: all 300ms 0ms ease-in; }
-  .post .upvote {
-    display: block;
-    margin: 7px 12px 0 0;
-    float: left; }
-  .post .post-content {
-    float: left; }
-    .post .post-content h3 {
-      margin: 0;
-      line-height: 1.4;
-      font-size: 18px; }
-      .post .post-content h3 a {
-        display: inline-block;
-        margin-right: 5px; }
-      .post .post-content h3 span {
-        font-weight: normal;
-        font-size: 14px;
-        display: inline-block;
-        color: #aaaaaa; }
-    .post .post-content p {
-      margin: 0; }
-  .post .discuss {
-    display: block;
-    float: right;
-    margin-top: 7px; }
+.new-solicitation-container{
+    position: relative;
+    background: #FFF;
+    padding: 20px ;
+    margin-bottom: 20px ;
 
-.comments {
-  list-style-type: none;
-  margin: 0; }
-  .comments li h4 {
-    font-size: 16px;
-    margin: 0; }
-    .comments li h4 .date {
-      font-size: 12px;
-      font-weight: normal; }
-    .comments li h4 a {
-      font-size: 12px; }
-  .comments li p:last-child {
-    margin-bottom: 0; }
+    .fa-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+    }
+    label{
+        display: block;
+        margin-bottom: 10px ;
+    }
+    textarea, input{
+        width: 100%;
+    }
+}
+
+.solicitacao{
+    background: #FFF; 
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+    position: relative; 
+    z-index: 1;
+    .btn-primary, .btn-deny{
+        display: block;
+    }
+    &.in-menu{
+        background: teal;
+        color: #FFF
+    }
+        h3{
+            border-bottom: rgba(255,255,255, 0.6) solid 3px;}
+    h3{
+        font-size: 3em;
+        opacity: 0.3;
+        border-bottom: rgba(0,0,0, 0.3) solid 3px;
+        margin-top: 0;
+        margin-bottom: 10px ;
+    }
+    button{
+        margin-top: 20px;
+        }
+    .fa-trash, .fa-pencil{
+        opacity: 0.3;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.6em;
+        display: block;
+        padding: 20px ;
+        color: black;
+    }
+        &:hover{
+            color: red ;
+            opacity: 0.6;
+        }
+    .fa-pencil{
+        right: 40px;
+    }
+        &:hover{
+            color: purple;
+        }
+    .ingredient{
+        display: inline-block;
+        margin-right: 10px ;
+        font-size: 1.2em ;
+    }
+}
+    
+.menu-item{
+    @extend .solicitacao;
+}
 
 .dropdown-menu span {
   display: block;
@@ -361,7 +377,8 @@ table {
   clear: both;
   line-height: 20px;
   color: #bbb;
-  white-space: nowrap; }
+  white-space: nowrap; 
+}
 
 .load-more {
   display: block;

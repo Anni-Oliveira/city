@@ -33,6 +33,8 @@ raix:handlebar-helpers
 aldeed:template-extension
 alanning:roles
 aldeed:collection2
+aldeed:collection2-core
+aldeed:simple-schema
 aldeed:autoform
 
 erasaur:meteor-lodash
