@@ -4,8 +4,11 @@ Meteor.publish('allUsers', function (){
     }
 });
 
-Meteor.publish('allPosts', function (){
-    if(Roles.userIsInRole(this.userId, 'admin')){
-    return Meteor.posts.find({});
-    }
+Meteor.publish('solicitacoes', function(){
+	return Solicitacoes.find({author: this.userId});
+});
+
+Meteor.publish('SingleSolicitacao', function(id){
+	check(id, String);
+	return Solicitacoes.find({_id: id});
 });

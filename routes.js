@@ -13,34 +13,6 @@ FlowRouter.route('/dashboard', {
     }
 });
 
-FlowRouter.route('/services', {
-    name: 'services',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "Services"});
-    }
-});
-
-FlowRouter.route('/myServices', {
-    name: 'myServices',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "MyServices"});
-    }
-});
-
-FlowRouter.route('/listServices', {
-    name: 'listServices',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "ListServices"});
-    }
-});
-
-FlowRouter.route('/notifications', {
-    name: 'notifications',
-    action() {
-        BlazeLayout.render("AppLayout", {main: "Notifications"});
-    }
-});
-
 var adminRoutes = FlowRouter.group({
     prefix: '/admin',
     name: 'admin'

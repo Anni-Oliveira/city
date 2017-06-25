@@ -1,0 +1,17 @@
+<template name="Solicitacao">
+	<article class="solicitacao {{#if inMenu}}in-menu{{/if}}">
+		<h3>{{name}}</h3>
+		{{#if editMode}}
+			{{> quickForm collection="Solicitacoes" id=updateSolicitacaoId type="update" doc=this autosave=true}}
+		{{else}}
+			<p>{{desc}}</p>
+			{{#if inMenu}}
+				<button class="btn-deny toggle-menu">Remove from Menu</button>
+			{{else}}
+			 	<button class="btn-primary toggle-menu">Add to Menu</button>
+			{{/if}}
+		{{/if}}
+			<i class="fa fa-trash"></i>
+			<i class="fa fa-pencil"></i>
+	</article>
+</template>

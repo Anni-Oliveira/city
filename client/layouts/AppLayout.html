@@ -2,8 +2,6 @@
     {{> Header}}
     {{#if isInRole 'admin'}}
         {{> AppNav}}
-    {{else}}
-        {{> AppNavClient}}
     {{/if}}
     <main class="app-layout">
         {{> Template.dynamic template=main}}
