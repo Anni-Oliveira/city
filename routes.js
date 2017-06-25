@@ -16,9 +16,6 @@ FlowRouter.route('/dashboard', {
 FlowRouter.route('/services', {
 	name: 'services',
 	action() {
-		if(Meteor.userId()){
-			FlowRouter.go('service');
-		}
 		GAnalytics.pageview();
 		BlazeLayout.render('AppLayout', {main: 'Services'});
 	}
@@ -30,6 +27,14 @@ FlowRouter.route('/listaS', {
 	action() {
 		GAnalytics.pageview();
 		BlazeLayout.render('AppLayout', {main: 'ListaS'});
+	}
+});
+
+FlowRouter.route('/minhaLista', {
+	name: 'minhaLista',
+	action() {
+		GAnalytics.pageview();
+		BlazeLayout.render('AppLayout', {main: 'ListaCliente'});
 	}
 });
 

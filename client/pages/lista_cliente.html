@@ -1,0 +1,26 @@
+<template name="ListaCliente">
+       <h1 class="page-title" style="text-align: center">Minhas solicitações</h1>
+    
+    <table class="{{editMode}}">
+        <tr>
+            <th>Id_Solicitação</th>
+            <th>Tipo de problema</th>
+            <th>Descricao</th>
+            <th>Rua/Avenida</th>
+            <th>Bairro</th>
+            <th>CEP</th>
+            <th>Created At</th>
+        </tr>
+    {{#each solicitacoes}}
+        <tr>
+            <td class="solicitacao_id">{{_id}}</td>
+            <td>{{tipo_problema}}</td>
+            <td>{{descricao}}</td>
+            <td>{{ruaAvenida}}</td>
+            <td>{{bairro}}</td>
+            <td>{{cep}}</td>
+            <td>{{createdAt}}</td>
+        </tr>
+    {{/each}}
+    </table>
+</template>
