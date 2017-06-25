@@ -5,7 +5,7 @@ Meteor.publish('allUsers', function (){
 });
 
 Meteor.publish('solicitacoes', function(){
-	return Solicitacoes.find({author: this.userId});
+	return Solicitacoes.find({});
 });
 
 Meteor.publish('SingleSolicitacao', function(id){

@@ -6,29 +6,69 @@ Solicitacoes.allow({
 	},
 	update: function(userId, doc) {
 		return !!userId;
-	}
+	},
+	// remove: function(userId, doc) {
+	// 	return !!userId;
+	// }
 });
 
 //var SimpleSchema = require ( " node-simple-schema " );
 
 SolicitacaoSchema = new SimpleSchema({
-	name: {
-		type: String,
-		label: "Name"
-	},
-	desc: {
-		type: String,
-		label: "Description"
-	},
-	
-	inMenu: {
-		type: Boolean,
-		defaultValue: false,
-		optional: true,
-		autoform: {
-			type: "hidden"
+	tipo_problema: {
+
+	type: String,
+	label: "Marque qual o tipo de problema encontrado:",
+	autoform: {
+	type: "select-radio-inline",
+	allowedValues: [true],
+	options: function () {
+		return [
+		{
+			label: "Buraco",
+			value: 1
+		},
+		{
+			label: "Poste sem luz",
+			value: 2
+		},
+		{
+			label: "Bueiro entupido",
+			value: 3
+		},
+		{
+			label: "Lote sem limpar",
+			value: 4
+		},
+		{
+			label: "Lixo acumulado",
+			value: 5
 		}
+		];
+	  }
+	 }
 	},
+
+	descricao: {
+		type: String,
+		label: "Descricao"
+	},
+
+	ruaAvenida: {
+		type: String,
+		label: "Rua/Avenida"
+	},
+
+	bairro: {
+		type: String,
+		label: "Bairro/Setor"
+	},
+
+	cep: {
+		type: String,
+		label: "CEP"
+	},
+
 	author: {
 		type: String,
 		label: "Author",
@@ -39,6 +79,7 @@ SolicitacaoSchema = new SimpleSchema({
 			type: "hidden"
 		}
 	},
+
 	createdAt: {
 		type: Date,
 		label: "Created At",

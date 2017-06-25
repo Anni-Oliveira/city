@@ -24,27 +24,15 @@ FlowRouter.route('/services', {
 	}
 });
 
-FlowRouter.route('/menu', {
-	name: 'menu',
-	action() {
-		BlazeLayout.render('AppLayout', {main: 'Menu'});
-	}
-});
 
-FlowRouter.route('/solicitacao/:id', {
-	name: 'solicitation',
+FlowRouter.route('/listaS', {
+	name: 'listaS',
 	action() {
 		GAnalytics.pageview();
-		BlazeLayout.render('AppLayout', {main: 'SolicitationSingle'});
+		BlazeLayout.render('AppLayout', {main: 'ListaS'});
 	}
 });
 
-FlowRouter.route('/menu', {
-	name: 'menu',
-	action() {
-		BlazeLayout.render('MainLayout', {main: 'Menu'});
-	}
-});
 
 var adminRoutes = FlowRouter.group({
     prefix: '/admin',

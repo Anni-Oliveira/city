@@ -1,16 +1,7 @@
 <template name="Solicitacoes">
 	{{#if $.Session.get 'newSolicitation'}}
-		{{> newSolicitation}}
+		{{> NewSolicitation}}
 	{{else}}
-		<button class="new-solicitation">New Solicitation</button>
+		<button class="new-solicitation">Nova Solicitação</button>
 	{{/if}}	
-	<section class="solicitacoes">
-		{{#if Template.subscriptionsReady}}
-			{{#each solicitacoes}}
-				{{> Solicitacao}}
-			{{/each}}
-		{{else}}
-			<p>Loading</p>
-		{{/if}}
-	</section>
 </template>

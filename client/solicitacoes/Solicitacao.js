@@ -14,9 +14,6 @@ Template.Solicitacao.helpers({
 });
 
 Template.Solicitacao.events({
-	'click .toggle-menu': function(){
-		Meteor.call('toggleMenuItem', this._id, this.inMenu);
-	},
 	'click .fa-trash': function () {
 		Meteor.call('deleteSolicitacao', this._id);
 	},
