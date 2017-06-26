@@ -14,6 +14,9 @@ Template.Users.helpers({
     isAdmin: function() {
         return Roles.userIsInRole(this._id, 'admin') ? 'admin' : '';
     },
+    dateFormat: function() {
+        return moment(this.creatAt).format('MMMM D YYYY hh');
+    },
     editMode: function() {
         return Session.get('currentUser') ? 'edit-mode' : '';
     },

@@ -11,5 +11,8 @@ Template.ListaS.helpers({
     },
     solicitacoes: function(){
         return Solicitacoes.find();
+    },
+    dateFormat: function() {
+        return moment(this.creatAt).format('MMMM D YYYY hh');
     }
 });

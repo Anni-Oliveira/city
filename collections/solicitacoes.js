@@ -17,8 +17,10 @@ Solicitacoes.allow({
 SolicitacaoSchema = new SimpleSchema({
 	tipo_problema: {
 	type: String,
+	
 	label: "Marque qual o tipo de problema encontrado:",
 	autoform: {
+		class:"input-control radio",
 	type: "select-radio-inline",
 	allowedValues: [true],
 	options: function () {
