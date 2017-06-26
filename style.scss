@@ -11,7 +11,7 @@ html {
 
 body {
     color: $text;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'fontawesome-webfont', sans-serif;
 }
 
 h1 {
@@ -183,57 +183,6 @@ input[type="password"] {
         list-style: none;
     }
 }
-.app-nav-client {
-    z-index: 9;
-    position: fixed;
-    width: 80px;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    background: white;
-    overflow: hidden;
-    color: $text;
-    padding-top: 100px;
-    transition: all 0.3s ease;
-    border-right: solid 1px $dgrey;
-    &:hover {
-        width: 300px;
-        a > span {
-            opacity: 1;
-            transform: translate3d(0, 0,0);
-        }
-    }
-    a {
-        width: 100%;
-        padding: 10px 25px;
-        color: $text;
-        display: block;
-        white-space: nowrap;
-        font-size: 1em;
-        text-decoration: none;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
-        i {
-            font-size: 2em;
-            margin-right: 20px;
-        }
-        > span {
-            transform: translate3d(20px, 0,0);
-            opacity: 0;
-            transition: background 0.3s ease;
-        }
-        &:hover {
-            color: #FFF;
-            border-color: $action;
-            background: $nav - 20;
-        }
-    }
-    ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-}
 
 .page-title {
     margin-top: 0;
@@ -293,73 +242,27 @@ table {
     opacity: 1;
 }
 
-.new-solicitation-container{
-    position: relative;
-    background: #FFF;
-    padding: 20px ;
-    margin-bottom: 20px ;
-
-    .fa-close{
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 20px;
-    }
-    label{
-        display: block;
-        margin-bottom: 10px ;
-    }
-    textarea, input{
-        width: 100%;
-    }
+.new-solicitation{
+    margin-bottom: 40px;
 }
 
-.solicitacao{
+.new-solicitation-container{
     background: #FFF; 
-    padding: 0 20px 20px;
-    margin-bottom: 20px;
-    position: relative; 
-    z-index: 1;
-    .btn-primary, .btn-deny{
-        display: block;
-    }
-    &.in-menu{
-        background: teal;
-        color: #FFF
-    }
-        h3{
-            border-bottom: rgba(255,255,255, 0.6) solid 3px;}
-    h3{
-        font-size: 3em;
-        opacity: 0.3;
-        border-bottom: rgba(0,0,0, 0.3) solid 3px;
-        margin-top: 0;
-        margin-bottom: 10px ;
+    padding: 20px 20px 20px;
+    position: relative;
+    text-align: center;
+
+    label{
+        font-size: 1.3em;
+        margin-bottom: 10px;
     }
     button{
-        margin-top: 20px;
-        }
-    .fa-trash, .fa-pencil{
-        opacity: 0.3;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 1.6em;
-        display: block;
-        padding: 20px ;
-        color: black;
+        margin-top: 10px;
     }
-        &:hover{
-            color: red ;
-            opacity: 0.6;
-        }
-    .fa-pencil{
-        right: 40px;
+    textarea, input{
+        width: 100% ;
     }
-        &:hover{
-            color: purple;
-        }
+
 }
     
 .menu-item{
